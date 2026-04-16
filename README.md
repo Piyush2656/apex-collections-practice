@@ -1,5 +1,4 @@
-# apex-collections-practice
-Basic to advanced Apex Collections (List, Set, Map) examples with real-world use cases for Salesforce developers.
+
 # Apex Collections Practice 🚀
 
 This repository contains practical examples of **Apex Collections** used in Salesforce.
