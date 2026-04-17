@@ -82,26 +82,63 @@ public class Collection {
 }
 ---
 
-## 🎯 Why this Repository?
+🔹 Set ✔
+✔ What is Set?
 
-* To understand List, Set, and Map step by step
-* To prepare for Salesforce Developer interviews
-* To build strong fundamentals of Apex
+Set is used to store unique values (no duplicates allowed).
 
----
+💻 Example
+ public static void handleSetCollections(){
+        
+        Set<String> myPaintings = new Set<String>();
+        Set<String> myCurrencies = new Set<String>{'AED','INR','USD','CAD','INR'};   // USD,AED,INR,CAD
+        System.debug(myCurrencies);
+        
+        System.debug(myCurrencies.add('SGD'));     // AED,INR,USD,SGD
+        System.debug(myCurrencies.remove('USD')); 
+     // myCurrencies.get(0);                          this Method not Avilable Because It is Unorderd So 
+     // myCurrencies.indexOf('CAD');                  Same for This Method Also
+        System.debug(myCurrencies.contains('MRU'));
+        System.debug(myCurrencies.size());          // 4
+    }
 
-## 🚀 Upcoming
+🔹 Map ✔
+✔ What is Map?
 
-* Set collection examples
-* Map collection examples
-* Trigger-based real use cases
+Map stores data in key-value format.
 
----
+💻 Example
+public static void handleMapCollections(){
+       Map<String,String> employeeDetails = New Map<String,String>();
+        
+        System.debug(employeeDetails.isEmpty());      // True
+        
+       employeeDetails.put('EMP1002','Sheldon Cooper');
+       employeeDetails.put('EMP1003','Camroon Green');
+       employeeDetails.put('EMP1004','Josh Buttler');
+       employeeDetails.put('EMP1005','Brendum Makalum');
+       employeeDetails.put('EMP1006','Devil Jame'); 
+        
+         System.debug(employeeDetails.isEmpty());    //false
+        
+        System.debug('All the Employee Id are :' + employeeDetails.KeySet());   //use for Sagrigate VAlues
+        System.debug('All the Employee Id are :' + employeeDetails.values());    //
+        System.debug('Total Of Employees is :' + employeeDetails.Size());        
+    }
 
-## 👨‍💻 Author
+🎯 Why this Repository?
+To understand List, Set, and Map step by step
+To prepare for Salesforce Developer interviews
+To build strong fundamentals of Apex
 
-Learning Salesforce and improving Apex skills with daily practice.
+🚀 Next Steps
+More Set & Map use cases
+Advanced collection problems
+Trigger-based real-world scenarios
 
----
+👨‍💻 Author
+Learning Salesforce and improving Apex skills with practical examples.
 
 ⭐ Star this repo if you find it useful!
+---
+
