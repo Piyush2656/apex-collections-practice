@@ -80,12 +80,37 @@ public class Collection {
         }         
     } 
 }
----
 
+✔ Real Use Case (Important 🔥)
+List<Account> accList = [SELECT Id, Name FROM Account];
+
+for(Account acc : accList){
+    System.debug(acc.Name);
+}
+
+👉 SOQL always returns List
+👉 Trigger.new also gives List of records
+
+---
 🔹 Set ✔
 ✔ What is Set?
 
-Set is used to store unique values (no duplicates allowed).
+Set is used to store unique values in a single variable.
+It automatically removes duplicate values and does not maintain insertion order.
+
+✔ Why use Set?
+To remove duplicate data
+To check existence quickly (contains)
+To improve performance in bulk operations
+
+✔ Common Methods
+currencies.add('CAD');         // Add value
+currencies.remove('USD');      // Remove value
+currencies.contains('INR');    // Check existence
+currencies.size();             // Total elements
+currencies.isEmpty();          // Check empty
+currencies.clear();            // Remove all
+
 
 💻 Example
  public static void handleSetCollections(){
@@ -102,10 +127,38 @@ Set is used to store unique values (no duplicates allowed).
         System.debug(myCurrencies.size());          // 4
     }
 
+✔ Real Use Case (Important)
+List<String> data = new List<String>{'A','B','A','C'};
+
+Set<String> uniqueData = new Set<String>(data);
+
+System.debug(uniqueData); // A, B, C
+
+👉 Used to remove duplicates from List
+
+
 🔹 Map ✔
 ✔ What is Map?
 
-Map stores data in key-value format.
+Map is used to store data in key-value pair format.
+Each key is unique and is used to retrieve its corresponding value.
+
+✔ Why use Map?
+Fast data access using key
+Avoid nested loops (performance boost)
+Used heavily in Triggers
+
+✔ Common Methods
+students.put(3, 'Neha');        // Add
+students.get(1);                // Get value
+students.containsKey(2);        // Check key
+students.remove(2);             // Remove
+students.size();                // Count
+students.isEmpty();             // Check empty
+students.keySet();              // All keys
+students.values();              // All values
+students.clear();               // Remove all
+
 
 💻 Example
 public static void handleMapCollections(){
@@ -125,6 +178,18 @@ public static void handleMapCollections(){
         System.debug('All the Employee Id are :' + employeeDetails.values());    //
         System.debug('Total Of Employees is :' + employeeDetails.Size());        
     }
+
+✔ Real Use Case (Very Important 🔥)
+List<Account> accList = [SELECT Id, Name FROM Account];
+
+Map<Id, Account> accMap = new Map<Id, Account>(accList);
+
+Account acc = accMap.get(someId);
+
+👉 Direct record access without loop
+👉 Used in almost every Trigger
+
+
 
 🎯 Why this Repository?
 To understand List, Set, and Map step by step
